@@ -1,0 +1,9 @@
+resetCanvas 800 600
+setColor 30 90 210
+drawLine demo_line 60 70 280 180 DDA
+setColor 210 70 50
+drawPolygon demo_polygon 360 80 530 90 600 220 480 300 330 210 Bresenham
+setColor 40 150 90
+drawEllipse demo_ellipse 70 320 260 520
+setColor 140 60 170
+drawCurve demo_curve 350 420 420 300 480 460 580 260 680 360 Bezier

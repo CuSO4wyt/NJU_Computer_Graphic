@@ -1,0 +1,40 @@
+resetCanvas 600 600
+setColor 0 0 0
+drawLine line1 40 40 560 160 DDA
+drawLine line2 80 540 520 260 Bresenham
+saveCanvas march_1_lines
+
+resetCanvas 600 600
+setColor 20 110 220
+drawPolygon poly1 100 120 260 80 340 180 280 320 120 280 Bresenham
+setColor 220 80 60
+drawPolygon poly2 380 120 500 100 540 220 430 310 340 220 DDA
+saveCanvas march_2_polygons
+
+resetCanvas 600 600
+setColor 20 110 220
+drawPolygon base 130 120 290 120 330 250 210 340 90 250 Bresenham
+setColor 220 80 60
+drawPolygon moved 130 120 290 120 330 250 210 340 90 250 Bresenham
+translate moved 220 60
+setColor 60 170 90
+drawPolygon scaled 130 120 290 120 330 250 210 340 90 250 Bresenham
+scale scaled 210 220 0.7
+saveCanvas march_3_transform
+
+resetCanvas 600 600
+setColor 0 120 80
+drawEllipse ellipse1 70 120 280 360
+setColor 210 70 70
+drawEllipse ellipse2 320 100 540 300
+setColor 50 70 200
+drawLine clip1 40 420 520 580 Bresenham
+clip clip1 160 440 460 560 Liang-Barsky
+saveCanvas march_4_ellipse_clip
+
+resetCanvas 600 600
+setColor 210 70 70
+drawCurve curve1 60 220 130 100 240 300 320 160 Bezier
+setColor 40 90 200
+drawCurve curve2 320 420 360 300 420 440 500 260 560 360 B-spline
+saveCanvas march_5_curve

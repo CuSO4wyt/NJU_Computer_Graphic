@@ -1,0 +1,50 @@
+resetCanvas 900 650
+setColor 30 70 180
+drawLine base_axis_x 60 580 840 580 Bresenham
+drawLine base_axis_y 60 580 60 60 Bresenham
+setColor 210 60 50
+drawPolygon house 180 360 300 260 420 360 390 520 210 520 Bresenham
+drawPolygon roof 180 360 300 230 420 360 Bresenham
+setColor 50 150 90
+drawEllipse window_left 230 390 280 440
+drawEllipse window_right 320 390 370 440
+setColor 40 40 40
+drawLine door 290 520 290 450 Bresenham
+drawLine door_top 290 450 340 450 Bresenham
+drawLine door_right 340 450 340 520 Bresenham
+setColor 140 70 170
+drawCurve path 430 560 520 480 620 620 780 420 Bezier
+saveCanvas may_1_scene
+
+resetCanvas 900 650
+setColor 30 80 200
+drawPolygon transform_poly 180 160 320 130 390 250 300 360 160 300 Bresenham
+setColor 210 70 60
+drawPolygon rotate_poly 180 160 320 130 390 250 300 360 160 300 Bresenham
+rotate rotate_poly 280 245 45
+setColor 60 150 90
+drawPolygon scale_poly 180 160 320 130 390 250 300 360 160 300 Bresenham
+scale scale_poly 280 245 0.55
+translate scale_poly 360 110
+saveCanvas may_2_transform_compare
+
+resetCanvas 900 650
+setColor 25 25 25
+drawLine clip_a 80 120 820 520 Bresenham
+drawLine clip_b 80 520 820 120 Bresenham
+drawLine clip_c 450 20 450 630 Bresenham
+clip clip_a 220 160 700 520 Cohen-Sutherland
+clip clip_b 220 160 700 520 Liang-Barsky
+clip clip_c 220 160 700 520 Cohen-Sutherland
+setColor 200 80 50
+drawPolygon clip_window 220 160 700 160 700 520 220 520 Bresenham
+saveCanvas may_3_clip_compare
+
+resetCanvas 900 650
+setColor 190 50 60
+drawCurve bez_long 80 420 180 120 310 550 430 130 560 420 Bezier
+setColor 40 100 210
+drawCurve bs_long 400 560 470 220 540 520 620 180 710 480 820 260 B-spline
+setColor 50 150 90
+drawEllipse e_reverse 820 520 620 320
+saveCanvas may_4_curves_ellipse
